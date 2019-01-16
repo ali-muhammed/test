@@ -12,22 +12,22 @@
 <% end %>
 
 <div>
-	<%= f.label :Имя %>
+	<%= f.label :Имя %><br>
 	<%= f.text_field :first_name %>
 </div>
 
 <div>
-	<%= f.label :Фамилия %>
+	<%= f.label :Фамилия %><br>
 	<%= f.text_field :surname %>
 </div>
 
 <div>
-	<%= f.label :Отчество %>
+	<%= f.label :Отчество %><br>
 	<%= f.text_field :patronymic %>
 </div>
 
 <div>
-	<%= f.label :Дата_рождения %>
+	<%= f.label :Дата_рождения %><br>
 	<%= f.date_field :birth_date %>
 </div>
 
@@ -39,42 +39,42 @@
 </div>
 
 <div class="field">
-	<%= f.label :email %>
+	<%= f.label :email %><br>
 	<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 </div>
 
 <div>
-	<%= f.label :Телефон %>
+	<%= f.label :Телефон %><br>
 	<%= f.text_field :phone_number, required: true, value: "+7" %>
 </div>
 
 <div>
-	<%= f.label :Второй_телефон %>
+	<%= f.label :Второй_телефон %><br>
 	<%= f.text_field :second_phone_number, required: true, value: "+7" %>
 </div>
 
 <div>
-	<%= f.label :Skype %>
+	<%= f.label :Skype %><br>
 	<%= f.text_field :skype %>
 </div>
 
 <div>
-	<%= f.label :Номер_удостоверения_личности %>
+	<%= f.label :Номер_удостоверения_личности %><br>
 	<%= f.text_field :passport_id %>
 </div>
 
 <div>
-	<%= f.label :ИИН %>
+	<%= f.label :ИИН %><br>
 	<%= f.text_field :passport_self_id %>
 </div>
 
 <div>
-	<%= f.label :Кем_выдано  %>
+	<%= f.label :Кем_выдано  %><br>
 	<%= f.text_field :passport_organization %>
 </div>
 
 <div>
-	<%= f.label :Дата_выдачи %>
+	<%= f.label :Дата_выдачи %><br>
 	<%= f.date_field :passport_date %>
 </div>
 
@@ -87,7 +87,7 @@
 </div>
 
 <div class="field">
-	<%= f.label :password_confirmation %>
+	<%= f.label :password_confirmation %><br>
 	<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 </div>
 

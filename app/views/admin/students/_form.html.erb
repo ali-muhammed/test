@@ -1,0 +1,97 @@
+<%= form_with model: [ :admin, @student], local: true do |f| %>
+
+<% if @student.errors.any? %>
+<div class="errors">
+	Total errors: <%= @student.errors.count %>
+	<ul>
+		<% @student.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div>
+	<%= f.label :Имя %>
+	<%= f.text_field :first_name %>
+</div>
+
+<div>
+	<%= f.label :Фамилия %>
+	<%= f.text_field :surname %>
+</div>
+
+<div>
+	<%= f.label :Отчество %>
+	<%= f.text_field :patronymic %>
+</div>
+
+<div>
+	<%= f.label :Дата_рождения %>
+	<%= f.date_field :birth_date %>
+</div>
+
+<div>
+	<%= f.radio_button(:gender, "male") %>
+	<%= f.label(:male, "М") %>
+	<%= f.radio_button(:gender, "female") %>
+	<%= f.label(:female, "Ж") %>
+</div>
+
+<div class="field">
+	<%= f.label :email %>
+	<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+<div>
+	<%= f.label :Телефон %>
+	<%= f.text_field :phone_number, required: true, value: "+7" %>
+</div>
+
+<div>
+	<%= f.label :Второй_телефон %>
+	<%= f.text_field :second_phone_number, required: true, value: "+7" %>
+</div>
+
+<div>
+	<%= f.label :Skype %>
+	<%= f.text_field :skype %>
+</div>
+
+<div>
+	<%= f.label :Номер_удостоверения_личности %>
+	<%= f.text_field :passport_id %>
+</div>
+
+<div>
+	<%= f.label :ИИН %>
+	<%= f.text_field :passport_self_id %>
+</div>
+
+<div>
+	<%= f.label :Кем_выдано  %>
+	<%= f.text_field :passport_organization %>
+</div>
+
+<div>
+	<%= f.label :Дата_выдачи %>
+	<%= f.date_field :passport_date %>
+</div>
+
+<div class="field">
+	<%= f.label :password %>
+	<% if @minimum_password_length %>
+	<em>(<%= @minimum_password_length %> characters minimum)</em>
+	<% end %>
+	<%= f.password_field :password, autocomplete: "new-password" %>
+</div>
+
+<div class="field">
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
+
+<div>
+	<%= f.submit %>
+</div>
+<% end %>

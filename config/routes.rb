@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'greetings#index'
   namespace :administrator_cabinet do
     resources :welcome, only: [:index]
+    resources :students
   end
 end

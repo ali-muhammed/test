@@ -1,0 +1,13 @@
+<h1>All students</h1>
+
+<% if @students.any? %>
+	<% @students.each do |student| %>
+		<%= link_to "#{student.name} #{student.surname}", administrator_cabinet_student_path(student)%> |
+		<%= link_to "Edit", edit_administrator_cabinet_student_path(student)%>
+		<br>
+	<% end %>
+<% else %>
+	<p>There is still no students in database!</p>
+<% end %><br>
+
+<%= link_to "Добавить студента", new_administrator_cabinet_student_path, class: 'btn btn-success' %>

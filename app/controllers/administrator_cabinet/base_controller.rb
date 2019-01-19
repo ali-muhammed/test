@@ -1,5 +1,6 @@
-module Administrator
+module AdministratorCabinet
   class BaseController < ApplicationController
-    before_action: :authenticate_administrator!
+    before_action :authenticate_administrator!
+    layout 'administrator_cabinet'
   end
 end

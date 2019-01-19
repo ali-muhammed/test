@@ -1,7 +1,6 @@
-module Administrator
+module AdministratorCabinet
   class WelcomeController < BaseController
     def index
-      
     end
   end
 end

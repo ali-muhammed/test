@@ -1,2 +1,13 @@
-<%= link_to 'Log In', new_administrator_session_path %>
-<%= link_to 'Log Out', destroy_administrator_session_path, method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <%= link_to 'Administrator', new_administrator_session_path, class: 'btn btn-success' %>
+    </div>
+    <div class="col-4">
+      <%= link_to 'Teacher', new_teacher_session_path, class: 'btn btn-success' %>
+    </div>
+    <div class="col-4">
+      <%= link_to 'Student', new_student_session_path, class: 'btn btn-success' %>
+    </div>
+  </div>
+</div>

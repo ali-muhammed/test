@@ -22,15 +22,19 @@
          <%= link_to 'Students', admin_students_path, class: 'nav-link' %>
        </li>
        <li class="nav-item active">
-         <%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
+         <%= link_to 'Teachers', admin_students_path, class: 'nav-link' %>
        </li>
      </ul>
-   </div>
-  </nav>
+     <div class="form-inline my-2 my-lg-0 ">
+      <%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: "btn btn-success" %>
+    </div>
 
-  <div class="container">
-    <%= yield %>
   </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  
   devise_group :user, contains: [:administrator, :student]
 
   def after_sign_in_path_for(current_user)

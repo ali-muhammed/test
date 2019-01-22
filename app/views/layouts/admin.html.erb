@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'admin/admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+    <a class="navbar-brand" href="/admin/students">Attractor school</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+         <%= link_to 'Students', admin_students_path, class: 'nav-link' %>
+       </li>
+       <li class="nav-item active">
+         <%= link_to 'Teachers', admin_students_path, class: 'nav-link' %>
+       </li>
+     </ul>
+     <div class="form-inline my-2 my-lg-0 ">
+      <%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: "btn btn-success" %>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+</body>
+
+</html>

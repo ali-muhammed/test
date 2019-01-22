@@ -1,0 +1,3 @@
+<h1>Welcome, <%= "#{@student.first_name}" %></h1>
+<p>Find me in app/views/students/show.html.erb</p>
+<%= link_to 'Sign out', destroy_student_session_path, method: :delete, class: 'nav-link' %>

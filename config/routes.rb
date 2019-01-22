@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   devise_for :students
   devise_for :administrators
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
         resources :welcome, only: [:index]
         resources :students, only: [:show]
     end
+
 
 end

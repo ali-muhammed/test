@@ -1,0 +1,113 @@
+<div class="d-flex justify-content-center align-items-center">
+	<%= form_with model: [ :admin, @student], local: true do |f| %>
+
+	<% if @student.errors.any? %>
+	<div class="errors">
+		Total errors: <%= @student.errors.count %>
+		<ul>
+			<% @student.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	
+	<div class="d-flex justify-content-center align-items-center mb-4">
+		<%= f.submit "Добавить", class: "btn btn-outline-success" %>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Имя %><br>
+			<%= f.text_field :first_name, placeholder: "Имя" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :Фамилия %><br>
+			<%= f.text_field :surname, placeholder: "Фамилия" %>
+		</div>
+	</div>
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Отчество %><br>
+			<%= f.text_field :patronymic, placeholder: "Отчество" %>
+		</div>
+		<div class="form-group col-md-6">
+
+			<div>
+				<%= f.label :Дата_рождения %><br>
+			</div>
+			
+			<div>
+				<%= f.date_field :birth_date %>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :email %><br>
+			<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :Skype %><br>
+			<%= f.text_field :skype, placeholder: "Skype" %>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Телефон %><br>
+			<%= f.text_field :phone_number, required: true, placeholder: "Телефон" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :Второй_телефон %><br>
+			<%= f.text_field :second_phone_number, required: true, placeholder: "Второй телефон" %>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Номер_удостоверения_личности %><br>
+			<%= f.text_field :passport_id, placeholder: "Номер удостоверения личности" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :ИИН %><br>
+			<%= f.text_field :passport_self_id, placeholder: "ИИН" %>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Кем_выдано  %><br>
+			<%= f.text_field :passport_organization, placeholder: "Кем выдано" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :Дата_выдачи_удостоверения %><br>
+			<%= f.date_field :passport_date, placeholder: "Дата выдачи" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="d-flex justify-content-center align-items-center">
+			<%= f.label :Выберите_пол %>
+		</div>
+		
+		<div class="d-flex justify-content-center align-items-center">
+			<div class="mr-4">
+				<%= f.label(:male, "М") %>
+				<%= f.radio_button(:gender, "male") %>
+			</div>
+			<div>
+				<%= f.label(:female, "Ж") %>
+				<%= f.radio_button(:gender, "female") %>
+			</div>
+		</div>
+	</div>
+
+	<div class="d-flex justify-content-center align-items-center mb-4">
+		<%= f.submit "Добавить", class: "btn btn-outline-success" %>
+	</div>
+	<% end %>
+</div>

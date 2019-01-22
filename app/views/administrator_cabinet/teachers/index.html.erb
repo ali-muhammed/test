@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center align-items-center">
+	<h1 class="mb-4 mt-4">All Teachers</h1>
+</div>
+
+<div class="d-flex justify-content-center align-items-center mb-4">
+	<%= link_to "Добавить преподователя", new_administrator_cabinet_teacher_path, class: "btn btn-outline-success" %>
+</div>
+
+<div class="d-flex justify-content-center align-items-center">
+
+	<table class="table table-striped">
+		<tr>
+			<th>Имя</th>
+			<th>Фамилия</th>
+			<th>Email</th>
+			<th>Skype</th>
+			<th>Телефон</th>
+			<th>Группа</th>
+			<th>Действие</th>
+		</tr>
+		<% if @teachers.any? %>
+		<% @teachers.each do |teacher| %>
+		<tr>
+			<td> <%= link_to teacher.name, administrator_cabinet_teacher_path(teacher) %> </td>
+			<td> <%= link_to teacher.surname, administrator_cabinet_teacher_path(teacher) %> </td>
+			<td> <%= teacher.email %> </td>
+			<td> <%= teacher.skype %> </td>
+			<td> <%= teacher.phone %> <br> <%= teacher.second_phone %> </td>
+			<td> <%= teacher.name %> </td>
+			<td> <%= link_to "Изменить", edit_administrator_cabinet_teacher_path(teacher) %>
+			<%= link_to "Посмотреть", administrator_cabinet_teacher_path(teacher) %> </td>
+		</tr>
+		<% end %>
+
+		<% end %>
+
+	</table>
+
+</div>
+
+<div class="d-flex justify-content-center align-items-center mt-2">
+	<%= link_to "Добавить преподователя", new_administrator_cabinet_teacher_path, class: "btn btn-outline-success" %>
+</div>

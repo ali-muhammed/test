@@ -1,15 +1,15 @@
 <div class="d-flex justify-content-center align-items-center">
-	<h1 class="mb-4 mt-4">Редактирование данных студента</h1>
+	<h1 class = "mb-4 mt-4">Добавление преподавателя</h1>
 </div>
 
 <div class="d-flex justify-content-center align-items-center">
-	<%= form_with model: [ :administrator_cabinet, @student], local: true do |f| %>
+	<%= form_with model: [ :administrator_cabinet, @teacher], local: true do |f| %>
 
-	<% if @student.errors.any? %>
+	<% if @teacher.errors.any? %>
 	<div class="errors">
-		Total errors: <%= @student.errors.count %>
+		Total errors: <%= @teacher.errors.count %>
 		<ul>
-			<% @student.errors.full_messages.each do |message| %>
+			<% @teacher.errors.full_messages.each do |message| %>
 			<li><%= message %></li>
 			<% end %>
 		</ul>
@@ -57,6 +57,17 @@
 		<div class="form-group col-md-6">
 			<%= f.label :Skype %><br>
 			<%= f.text_field :skype, placeholder: "Skype" %>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<%= f.label :Пароль %><br>
+		<%= f.password_field :password, autocomplete: "new-password" %>
+		</div>
+		<div class="form-group col-md-6">
+			<%= f.label :Потвердите_пароль %><br>
+			<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 		</div>
 	</div>
 

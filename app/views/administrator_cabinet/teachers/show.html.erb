@@ -1,17 +1,18 @@
+
 <div class="d-flex justify-content-center align-items-center mt-4">
 	<div class="d-flex justify-content-center align-items-center">
 		<%= image_tag("Attractor_logo2.jpeg", size: "100%x100%", alt: "Photo") %>
 	</div>
 	<div class="card ml-4" style="width: 18rem;">
 		<div class="card-body">
-			<h5 class="card-title"><%= "#{@student.surname} #{@student.name}" %></h5>
+			<h5 class="card-title"><%= "#{@teacher.surname} #{@teacher.name}" %></h5>
 			<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, repudiandae.</p>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item"> Email: <%= @student.email %> </li>
-			<li class="list-group-item"> Skype: <%= @student.skype %> </li>
-			<li class="list-group-item"> Телефон: <%= "#{@student.phone} #{@student.second_phone}" %> </li>
-			<li class="list-group-item"> Group: <%= @student.name %> </li>
+			<li class="list-group-item"> Email: <%= @teacher.email %> </li>
+			<li class="list-group-item"> Skype: <%= @teacher.skype %> </li>
+			<li class="list-group-item"> Телефон: <%= "#{@teacher.phone} #{@teacher.second_phone}" %> </li>
+			<li class="list-group-item"> Group: <%= @teacher.name %> </li>
 		</ul>
 	</div>
 </div>

@@ -1,15 +1,15 @@
 <div class="d-flex justify-content-center align-items-center">
-	<h1 class="mb-4 mt-4">Редактирование данных студента</h1>
+	<h1 class="mb-4 mt-4">Редактирование данных преподавателя</h1>
 </div>
 
 <div class="d-flex justify-content-center align-items-center">
-	<%= form_with model: [ :administrator_cabinet, @student], local: true do |f| %>
+	<%= form_with model: [ :administrator_cabinet, @teacher], local: true do |f| %>
 
-	<% if @student.errors.any? %>
+	<% if @teacher.errors.any? %>
 	<div class="errors">
-		Total errors: <%= @student.errors.count %>
+		Total errors: <%= @teacher.errors.count %>
 		<ul>
-			<% @student.errors.full_messages.each do |message| %>
+			<% @teacher.errors.full_messages.each do |message| %>
 			<li><%= message %></li>
 			<% end %>
 		</ul>

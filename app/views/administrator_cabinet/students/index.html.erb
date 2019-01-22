@@ -1,13 +1,43 @@
-<h1>All students</h1>
+<div class="d-flex justify-content-center align-items-center">
+	<h1 class="mb-4 mt-4">All Students</h1>
+</div>
 
-<% if @students.any? %>
-	<% @students.each do |student| %>
-		<%= link_to "#{student.name} #{student.surname}", administrator_cabinet_student_path(student)%> |
-		<%= link_to "Edit", edit_administrator_cabinet_student_path(student)%>
-		<br>
-	<% end %>
-<% else %>
-	<p>There is still no students in database!</p>
-<% end %><br>
+<div class="d-flex justify-content-center align-items-center mb-4">
+	<%= link_to "Добавить студента", new_administrator_cabinet_student_path, class: "btn btn-outline-success" %>
+</div>
 
-<%= link_to "Добавить студента", new_administrator_cabinet_student_path, class: 'btn btn-success' %>
+<div class="d-flex justify-content-center align-items-center">
+
+	<table class="table table-striped">
+		<tr>
+			<th>Имя</th>
+			<th>Фамилия</th>
+			<th>Email</th>
+			<th>Skype</th>
+			<th>Телефон</th>
+			<th>Группа</th>
+			<th>Действие</th>
+		</tr>
+		<% if @students.any? %>
+		<% @students.each do |student| %>
+		<tr>
+			<td> <%= link_to student.name, administrator_cabinet_student_path(student) %> </td>
+			<td> <%= link_to student.surname, administrator_cabinet_student_path(student) %> </td>
+			<td> <%= student.email %> </td>
+			<td> <%= student.skype %> </td>
+			<td> <%= student.phone %> <br> <%= student.second_phone %> </td>
+			<td> <%= student.name %> </td>
+			<td> <%= link_to "Изменить", edit_administrator_cabinet_student_path(student) %>
+			<%= link_to "Посмотреть", administrator_cabinet_student_path(student) %> </td>
+		</tr>
+		<% end %>
+
+		<% end %>
+
+	</table>
+
+</div>
+
+<div class="d-flex justify-content-center align-items-center mt-2">
+	<%= link_to "Добавить студента", new_administrator_cabinet_student_path, class: "btn btn-outline-success" %>
+</div>

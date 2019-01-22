@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
       administrator_cabinet_welcome_index_path
     elsif current_user.type == "Student"
       student_cabinet_welcome_index_path
+    elsif current_user.type == "Teacher"
+      teacher_cabinet_welcome_index_path
     end
   end
 end
